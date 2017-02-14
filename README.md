@@ -1,18 +1,80 @@
-# React-Redux-Lab
+# React Components as Routes Lab
+
+## Overview
+
+In this lab, you will create a simple Client-Side routing application with __React Router__.
 
 ## Objectives
 
-1. Objective 1
-2. Objective 2
+* Practice building an application with __React Router__
+* Access routes using a Navbar with matched routes
+* Visit different "views" in the application by accessing different routes
 
-## Instructions
+## React Router App
 
-Create make the tests pass Heroku lab. API Nokogiri guest speaker belongs_to RESTful binder.ply. Url Rails slack it to me. Asset pipeline Feelings Friday puts "woof" API open source.
+In this lab we are going to build out an application that has routes for a Home Page, Actors Page, Movies Page and Directors Page. Our goal is to provide routes and links for these 4 pages.
 
-Destroy now we can teach dogs to do anything link drop tables lab The Gucci bundle install. Associations def iterate infobesity Twitter. Undefined local variable or method mass assignment Heroku Programmer of the Day Meetup fido.bark. Internet create. Ironboard The Gucci path stack undefined local variable or method truthy-ness. Sqlite3 scooter blog posts DRY The Gucci cat. Truthy-ness bundle.
+This is what our app should look like when we are done with this lab:
 
-### Part 1: Do Some Stuff
+* [Home Page](https://s3.amazonaws.com/learn-verified/react-router-lab-home-page.png)
+* [Movies Page](https://s3.amazonaws.com/learn-verified/react-router-lab-movies-page.png)
+* [Directors Page](https://s3.amazonaws.com/learn-verified/react-router-lab-directors-page.png)
+* [Actors Page](https://s3.amazonaws.com/learn-verified/react-router-lab-actors-page.png)
+
+Lets work through this one component at a time
+
+### Components
+
+Our `src` folder contains the following:
+```
+src/
+├── data.js
+├── index.js
+├── routes.js
+└── components/
+    ├── Actors.js
+    ├── App.js
+    ├── Directors.js
+    ├── Home.js
+    ├── Movies.js
+    └── NavBar.js
+```
+
+All of the file and module imports are done for you, so you just need to focus on the JSX for these components.
+
+#### `Index.js`
+
+Our `Index.js` file is partially completed for us. It loads in the `Router` and `browserHistory` from __React Router__. You will need to move the route, inside the react-dom render method, to the __./routes.js__ file. Then you need pass the routes as props to the __Router__ (i.e. `<Router history={browserHistory} routes={routes}>`).
+
+#### `data.js`
+
+This file contains seed data for __Actors, Movies, and Directors__
+
+#### `<App />`
+
+This component should render our `<NavBar />` and display the content of our individual route components below. When a user visits the root url, he should see the App component.
+
+#### `<NavBar />`
+
+This component needs to render an `<ul />` with links for __/, /movies, /directors, /actors__ <-- in this order(test checks for this).
+
+#### `<Home />`
+
+This component should render the text `Home Page`.
+
+#### `<Movies />`
+
+This component should render the text `Movies Page`, and make a new `<div />` for each movie. The `<div />` should contain the movie's title, time and an `<ul />` for each genre.
+
+#### `<Directors />`
+
+This component should render the text `Directors Page`, and make a new `<div />` for each director. The `<div />` should contain the director's name and an `<ul />` for each of their movies.
+
+#### `<Actors />`
+
+This component should render the text `Actors Page`, and make a new `<div />` for each actor. The `<div />` should contain the actor's name and an `<ul />` for each of their movies.
 
 ## Resources
 
-* [Stack Exchange](http://www.stackexchange.com) - [Some Question on Stack Exchange](http://www.stackexchange.com/questions/123)
+[React Router](https://github.com/ReactTraining/react-router)
+[React Router Tutorial](https://github.com/reactjs/react-router-tutorial)
